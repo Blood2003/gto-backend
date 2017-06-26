@@ -65,7 +65,8 @@ public class ClientSingleton {
   
         
         LOGGER.info("In POST {}{}",  new Object[]{uri, path});
-        ContentResponse response = httpClient.GET(uri+path);
+        // ContentResponse response = httpClient.GET(uri+path);
+        ContentResponse response = httpClient.GET("http://projectx:8080/projectx/x");
         LOGGER.info("Out POST {}{} response=[{}] content=[{}]", new Object[]{uri, path, response, response.getContentAsString()});
         
         return response;
