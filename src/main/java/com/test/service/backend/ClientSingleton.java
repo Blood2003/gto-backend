@@ -62,11 +62,12 @@ public class ClientSingleton {
         String uri = ConfigurationSingleton.getInstance().getServiceUrl();
         
    
-  
+        String url = System.getenv("URL_PROJECTX");
         
-        LOGGER.info("In POST {}{}",  new Object[]{uri, path});
+        // LOGGER.info("In POST {}{}",  new Object[]{uri, path});
         // ContentResponse response = httpClient.GET(uri+path);
-        ContentResponse response = httpClient.GET("http://projectx/projectx/x");
+        LOGGER.info("In POST {}",  url);
+        ContentResponse response = httpClient.GET(url);
         LOGGER.info("Out POST {}{} response=[{}] content=[{}]", new Object[]{uri, path, response, response.getContentAsString()});
         
         return response;
