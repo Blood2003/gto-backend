@@ -11,6 +11,9 @@ spec:
         app: backend
     spec:
       containers:
+        - env:
+          - name: URL_PROJECTX
+            value: projectx/projectx/x
         - name: backend
           image: cedbossneo/gto-backend
           ports:
